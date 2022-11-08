@@ -11,10 +11,11 @@
 //
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
-Cypress.Commands.add('login', ({ username, password }) =>
+Cypress.Commands.add('login', function(username, password){
   cy.get('#username').clear().type(username)
-  .get('#password').clear().type(password)
-  .contains('Submit').click()
+  cy.get('#password').clear().type(password)
+  cy.contains('Submit').click()
+  }
 )
 //
 //
